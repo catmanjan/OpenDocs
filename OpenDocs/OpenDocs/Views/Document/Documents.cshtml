@@ -1,0 +1,50 @@
+﻿@inherits ViewPage<OpenDocs.Service.Documents>
+
+@{
+    ViewBag.Title = "Documents";
+}
+
+<p><a href="~/documents/create" class="k-button">Create New</a></p>
+
+<table id="documents">
+    <thead>
+        <tr>
+            <th>Icon</th>
+            <th>Title</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var document in Model.Results)
+        {
+            <tr>
+                <td>
+                    @if (document.DocumentType == OpenDocs.Service.Model.DocumentType.Document)
+                    {
+                        <img src="~/Content/images/document.png" width="48" height="48" alt="Document" />
+                    }
+                    else
+                    {
+                        <img src="~/Content/images/spreadsheet.png" width="48" height="48" alt="Spreadsheet" />
+                    }
+                </td>
+                <td>
+                    <a href="~/documents/@document.Id">@document.Title</a>
+                </td>
+                <td>
+                    <form action="~/documents/delete/@document.Id" method="post">
+                        <button type="submit" class="k-button">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<p>Showing @Model.Results.Count of @Model.Total documents</p>
+
+<script>
+    $(function () {
+        $('#documents').kendoGrid();
+    });
+</script>

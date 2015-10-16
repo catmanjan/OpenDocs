@@ -1,0 +1,46 @@
+﻿@inherits ViewPage<OpenDocs.Service.Document>
+
+@{
+    ViewBag.Title = Model.Title;
+}
+
+<p>
+    <input id="title" type="text" class="k-textbox" value="@Model.Title" />
+</p>
+<textarea id="editor" style="width: 100%; height: 600px;">@Model.Content</textarea>
+
+<script>
+    var kendoEditor;
+    var model = {
+        Id: @Model.Id,
+        Revision: @Model.Revision,
+        LastContent: '',
+        getTitle: function() {
+            return $('#title').val();
+        },
+        getContent: function() {
+            // replace this with something? respondjs, react? wtf
+            return kendoEditor.value();
+        },
+        setContent: function(result) {
+            var range = kendoEditor.getRange();
+
+            console.log(range);
+
+            kendoEditor.value(result);
+
+            kendoEditor.selectRange(range);
+        }
+    };
+
+    $(function (){
+        kendoEditor = $('#editor').kendoEditor()
+            .data('kendoEditor');
+
+        model.LastContent = model.getContent();
+
+        setInterval(function() {
+            OpenDocs.sync(model)
+        }, 1000);
+    });
+</script>

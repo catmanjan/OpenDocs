@@ -1,0 +1,11 @@
+﻿@inherits ViewPage<OpenDocs.Service.DocumentCreate>
+
+@{
+    ViewBag.Title = "Create a Document";
+}
+
+<form method="post" action="/documents/create">
+    <p>Select a document type:</p>
+    <button name="DocumentType" value="Document" class="k-button">Document</button>
+    <button name="DocumentType" value="Spreadsheet" class="k-button">Spreadsheet</button>
+</form>

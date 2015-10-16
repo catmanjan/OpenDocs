@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenDocs", "OpenDocs\OpenDocs.csproj", "{85D16D0A-00BB-41AB-815E-865A911B1B59}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenDocs.Service", "OpenDocs.Service\OpenDocs.Service.csproj", "{D17CEDA1-6486-46DF-BE18-EC4F5C52E06C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenDocs.Service.Model", "OpenDocs.Service.Model\OpenDocs.Service.Model.csproj", "{DBCE2050-B23E-407F-A483-963B6B775156}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiffMatchPatch", "DiffMatchPatch\DiffMatchPatch.csproj", "{2FA0B201-3E52-4FC2-A84D-29E41FE5F279}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{85D16D0A-00BB-41AB-815E-865A911B1B59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85D16D0A-00BB-41AB-815E-865A911B1B59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85D16D0A-00BB-41AB-815E-865A911B1B59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85D16D0A-00BB-41AB-815E-865A911B1B59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D17CEDA1-6486-46DF-BE18-EC4F5C52E06C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D17CEDA1-6486-46DF-BE18-EC4F5C52E06C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D17CEDA1-6486-46DF-BE18-EC4F5C52E06C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D17CEDA1-6486-46DF-BE18-EC4F5C52E06C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBCE2050-B23E-407F-A483-963B6B775156}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBCE2050-B23E-407F-A483-963B6B775156}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBCE2050-B23E-407F-A483-963B6B775156}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBCE2050-B23E-407F-A483-963B6B775156}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FA0B201-3E52-4FC2-A84D-29E41FE5F279}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FA0B201-3E52-4FC2-A84D-29E41FE5F279}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FA0B201-3E52-4FC2-A84D-29E41FE5F279}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FA0B201-3E52-4FC2-A84D-29E41FE5F279}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
