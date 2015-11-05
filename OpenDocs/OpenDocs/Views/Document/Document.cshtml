@@ -1,4 +1,4 @@
-﻿@inherits ViewPage<OpenDocs.Service.Document>
+@inherits ViewPage<OpenDocs.Service.Document>
 
 @{
     ViewBag.Title = Model.Title;
@@ -24,12 +24,12 @@
         },
         setContent: function(result) {
             var range = kendoEditor.getRange();
-
-            console.log(range);
+            var startOffset = range.startOffset;
+            var index = $(range.startContainer.parentElement).index();
 
             kendoEditor.value(result);
 
-            kendoEditor.selectRange(range);
+            moveCaret(kendoEditor, range, index, startOffset);
         }
     };
 
@@ -43,4 +43,28 @@
             OpenDocs.sync(model)
         }, 1000);
     });
+
+    function moveCaret(editor, firstRange, index, startOffset) {
+        var range = editor.getRange();
+
+        if (range.collapsed) {
+            var textNode = $(editor.body).find('p:eq(' + index + ')')
+              .contents()
+              .filter(function() {
+                  return this.nodeType === 3; //Node.TEXT_NODE
+              })[0];
+
+            if(textNode) {
+                console.log(startOffset);
+                if(startOffset > textNode.length) {
+                    startOffset = textNode.length;
+                }
+
+
+                range.setStart(textNode, startOffset);
+                range.collapse(true); // collapse to start
+                editor.selectRange(range);
+            }
+        }
+    }
 </script>
