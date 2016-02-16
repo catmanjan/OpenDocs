@@ -23,13 +23,14 @@
             return kendoEditor.value();
         },
         setContent: function(result) {
-            var range = kendoEditor.getRange();
+            //var range = kendoEditor.getRange();
 
-            console.log(range);
+            //console.log(range);
 
             kendoEditor.value(result);
+            kendoEditor.update();
 
-            kendoEditor.selectRange(range);
+            //kendoEditor.selectRange(range);
         }
     };
 
